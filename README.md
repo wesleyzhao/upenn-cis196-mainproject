@@ -1,6 +1,6 @@
 Link to the deployed app
 ------------------------
-http://vast-island-3455.herokuapp.com/
+http://peaceful-scrubland-1272.herokuapp.com/
 
 Goal of the homework
 --------------------
