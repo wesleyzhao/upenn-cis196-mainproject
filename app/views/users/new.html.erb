@@ -1,0 +1,86 @@
+<h1>Users#new</h1>
+<p>Find me in app/views/users/new.html.erb</p>
+<%= form_for(@user) do |f| %>
+
+<div class="field">
+  <p>name</p> 
+  <%= f.text_field :name%>
+</div>
+
+<div class="field">
+  <p>email</p> 
+  <%= f.text_field :email%>
+</div>
+
+<div class="field">
+  <p>password</p> 
+  <%= f.text_field :password%>
+</div>
+
+<div class="field">
+  <p>Height (in cm)</p> 
+  <%= f.text_field :height_cm%>
+</div>
+
+<div class="field">
+  <p>Weight (in kg)</p> 
+  <%= f.text_field :weight_kg%>
+</div>
+
+<div class="field">
+  <p>Activity Level</p> 
+  <%= f.text_field :activity_level%>
+</div>
+
+<div class="field">
+  <p>Body Fat Percentage</p> 
+  <%= f.text_field :body_fat_percent%>
+</div>
+
+<div class="field">
+  <p>Weight Goal (kg)</p> 
+  <%= f.text_field :weight_kg_goal%>
+</div>
+
+<div class="field">
+  <p>Body Fat Percent Goal</p> 
+  <%= f.text_field :body_fat_percent%>
+</div>
+
+<p>Address</p>
+
+<div class="field">
+  <p>Street Line 1</p> 
+  <%= f.text_field :address_street1%>
+</div>
+
+<div class="field">
+  <p>Street Line 2</p> 
+  <%= f.text_field :address_street2%>
+</div>
+
+<div class="field">
+  <p>City</p> 
+  <%= f.text_field :address_city%>
+</div>
+
+<div class="field">
+  <p>State</p> 
+  <%= f.text_field :address_state%>
+</div>
+
+<div class="field">
+  <p>Zip Code</p> 
+  <%= f.text_field :zipcode%>
+</div>
+
+<div class="field">
+  <p>Country</p> 
+  <%= f.text_field :address_country%>
+</div>
+
+<div class="actions">  
+  <%= f.submit %>
+</div>
+
+<% end %>

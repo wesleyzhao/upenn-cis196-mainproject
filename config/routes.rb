@@ -1,4 +1,17 @@
 Mainproject::Application.routes.draw do
+  root "welcome#index"
+  get "welcome/index"
+  get "food_items/index"
+  get "food_items/new"
+  get "food_items/edit"
+  get "food_items/show"
+  get "users/new"
+  get "users/index"
+  get "users/edit"
+  get "users/delete"
+
+  resources :users
+  resources :food_items
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
