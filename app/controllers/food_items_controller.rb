@@ -7,10 +7,30 @@ class FoodItemsController < ApplicationController
     @food_item = FoodItem.new
   end
 
-  def edit
+  def show
+    @food_item = FoodItem.find(params[:id])
   end
 
-  def show
+  def edit
+    @food_item = FoodItem.find(params[:id])
+  end
+
+  def update
+    @food_item = FoodItem.find(params[:id])
+    if @food_item.update_attributes(food_item_params)
+      redirect_to food_item_path(@food_item.id)
+    else
+      render 'edit'
+    end
+  end
+
+  def delete
+  end
+
+  def destroy
+    @food_item = FoodItem.find(params[:id])
+    @food_item.destroy
+    redirect_to food_items_path
   end
 
   def create

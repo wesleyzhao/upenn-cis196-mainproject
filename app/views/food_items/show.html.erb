@@ -1,2 +1,30 @@
 <h1>FoodItems#show</h1>
 <p>Find me in app/views/food_items/show.html.erb</p>
+
+<div>
+  <h2><%= @food_item.name %></h2>
+  <table>
+    <tr>
+      <td>calories</td>
+      <td>protein (g)</td>
+      <td>carbs (g)</td>
+      <td>fat (g)</td>
+      <td>description</td>
+      <td>User</td>
+      <td>edit</td>
+      <td>destroy</td>
+    </tr>
+
+    <tr>
+      <td><%= @food_item.calories %></td>
+      <td><%= @food_item.protein %></td>
+      <td><%= @food_item.carbs %></td>
+      <td><%= @food_item.fat %></td>
+      <td><%= @food_item.description %></td>
+      <td><%= link_to @food_item.user.name, user_path(@food_item.user.id) %></td>
+      <td><%= link_to "edit", edit_food_item_path(@food_item.id) %></td>
+      <td><%= link_to "destroy", @food_item, confirm: "you sure you want to delete this food item?", method: :delete %></td>
+    </tr>
+
+  </table>
+</div>
