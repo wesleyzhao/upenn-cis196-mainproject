@@ -1,4 +1,5 @@
 Mainproject::Application.routes.draw do
+  devise_for :users
   root "welcome#index"
   get "welcome/index"
   get "food_items/index"
@@ -10,7 +11,7 @@ Mainproject::Application.routes.draw do
   get "users/edit"
   get "users/delete"
 
-  resources :users
+  # resources :users
   resources :food_items
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

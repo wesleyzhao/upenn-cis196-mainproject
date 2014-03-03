@@ -48,4 +48,4 @@ end
 
 gem 'rails_12factor', group: :production
 
-gem 'devise'
+gem 'devise', '3.0'
