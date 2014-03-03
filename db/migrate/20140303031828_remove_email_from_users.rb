@@ -1,5 +1,5 @@
 class RemoveEmailFromUsers < ActiveRecord::Migration
-  def self.down
-    remove_column :users, :email
+  def change
+    remove_column :users, :email, :string
   end
 end
