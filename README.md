@@ -20,21 +20,30 @@ Issues I ran in to
 ------------------
 
 (1) Typo regarding if user_signed_in?
+
 On page 4 of gems.pdf the navbar that is given as an example incorrectly shows the Logout link if 
+
 !user_signed_in?
+
 However, that means a user that is NOT signed in will see the Logout link. This just required removing the "!"
 
 (2) Using the before_filter
+
 I incorrectly thought that you could add a before_filter from function to function, so I added it to views that I wanted to require the user to be logged in for. It turns out, that you can use it once at the top of a controller to restrict all the controllers.
 
 (3) Migrating the Heroku DB
+
 So even though the basic migrations/fixes described in gems.pdf twerks on our local sqlite dbs, it does not work so well when deploying and migrating on Heroku.
+
 On Heroku, even though the migration removes the email column, the PG database still holds on to the UNIQUE index on email. So when trying to migrate, I got an error saying that you cannot duplicate the index on email.
 So my fix for this was to go into the migration and comment out the line that adds another index on email. After doing this, the migration worked just fine.
 
 (4) Custom fields for Devise registration views
+
 After adding custom fields in the registration views for devise as gems.pdf showed, the fields did not actually save. 
+
 In order to so, I realized we had to, again, permit parameters for the devise controllers. So I looked it up on Google and used this link as my general guide:
+
 http://stackoverflow.com/questions/16297797/add-custom-field-column-to-devise-with-rails-4
 
 # Hometwerk 5
