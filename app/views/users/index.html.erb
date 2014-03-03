@@ -44,14 +44,14 @@
    <td><%= user.address_country %></td>
    <td><%= link_to user.name, user_path(user.id) %></td>
    <td>
-     <% if current_user.id == user.id %>
+     <% if current_user && (current_user.id == user.id) %>
      <%= link_to "edit #{user.name}", edit_user_registration_path(user.id) %>
      <% else %>
      Not permitted to Edit
      <% end %>
    </td>
    <td>
-     <% if current_user.id == user.id %>
+     <% if current_user && (current_user.id == user.id) %>
      <%= link_to "destroy user", user, confirm: "you sure you want to delete this user?", method: :delete %>
      <% else %>
      Not permitted to Destroy
