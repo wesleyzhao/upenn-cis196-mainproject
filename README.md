@@ -1,8 +1,45 @@
-# twerk,Home 6
-
 Link to the deployed app
 ------------------------
 http://peaceful-scrubland-1272.herokuapp.com/
+
+# HW 7
+Goal of the homework
+--------------------
+To learn how to set up validations for models.
+The validations that I added included:
+- "present" for a food item name
+- custom regex for any valid integer for food item nutritional values
+- custom regex for any valid postive number for user registration weight, body fat, height values
+
+Issues I ran in to
+------------------
+
+(1) Application controller: sanitizing with devise even when not in use
+
+For some reason the if-statement I used to check for if the devise_controller was being used was not working properly. Before it was:
+
+  if :devise_controller?
+    before_action :configure_devise_permitted_parameters
+  end
+
+Now it is:
+
+  before_action :configure_devise_permitted_parameters, if: :devise_controller?	
+For some reason, before I changed it even if I wasn't using devise, it would try to run through the devise sanitizer which would throw errors if I was trying to create or update food items. Tis fixed now.
+
+(2) Number regex validation
+
+This is actually a somewhat unresolved issue. For some reason, my integer/float regex validations are not fully working. If you type a string, the model will update/create with that field being a 0. I'm not sure why it does this, since when using the following regex:
+
+\d?
+
+the number 10 is not allowed to be submitted but "asdfasdf" passes.
+
+This tells me it must be something where it's not validated, and so RoR just automatically saves a 0. Not quite sure.
+
+
+# twerk,Home 6
+
 
 Goal of the homework
 --------------------
