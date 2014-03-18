@@ -1,4 +1,15 @@
 <h1>FoodItems#edit</h1>
+
+<div class="error-msg">
+  <% if @food_item.errors.any? %>
+  <ul>
+    <% @food_item.errors.full_messages.each do |msg| %>
+    <li><%=msg%></li>
+    <% end %>
+  </ul>
+  <% end %>
+</div>
+
 <%= form_for(@food_item) do |f| %>
 
 <div class="field">

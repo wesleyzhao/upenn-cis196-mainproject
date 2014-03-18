@@ -1,5 +1,16 @@
 <h1>FoodItems#new</h1>
 <p>Find me in app/views/food_items/new.html.erb</p>
+
+<div class="error-msg">
+  <% if @food_item.errors.any? %>
+  <ul>
+    <% @food_item.errors.full_messages.each do |msg| %>
+    <li><%=msg%></li>
+    <% end %>
+  </ul>
+  <% end %>
+</div>
+
 <%= form_for(@food_item) do |f| %>
 
 <div class="field">
