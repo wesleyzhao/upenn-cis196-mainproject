@@ -53,6 +53,7 @@ class FoodItemsController < ApplicationController
 
     # only passes to here if the user was the correct one
     if @food_item.save
+      Notifications.new_food_item(@food_item).deliver
       redirect_to food_items_path
     else
       render 'new'

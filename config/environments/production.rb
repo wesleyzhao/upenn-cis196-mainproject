@@ -64,6 +64,15 @@ Mainproject::Application.configure do
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.default_url_options = {host: 'http://peaceful-scrubland-1272.herokuapp.com/'}
+  
+  config.action_mailer.smtp_settings = { 
+    :address => 'smtp.mailgun.org',
+    :port => ENV['MAILGUN_SMTP_PORT'],
+    :user_name => ENV['MAILGUN_SMTP_LOGIN'],
+    :password => ENV['MAILGUN_SMTP_PASSWORD'],
+    :domain => 'http://peaceful-scrubland-1272.herokuapp.com/'
+  }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation can not be found).

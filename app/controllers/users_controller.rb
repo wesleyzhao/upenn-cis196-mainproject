@@ -36,6 +36,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      Notifications.new_comment(@user).deliver
       redirect_to users_path
     else
       render 'new'
