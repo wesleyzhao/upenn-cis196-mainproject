@@ -18,21 +18,9 @@ In this homework, I specifically added the following sets of queries:
 Issues I ran in to
 ------------------
 
-(1) Setting production environment variables
+(1) Reading in the GET variables from the URL
 
-When I saw that there would be variables such as the following
-
-ENV['MAILGUN_SMTP_LOGIN']
-
-I started trying to figure out how to make sure we could do that in Heroku without pushing code to a repo where credentials were exposed. After some googling I found out that you simply just use the heroku config command. So I could check what variables are config'd by:
-
->> heroku config
-
-And to add it I could do
-
->> heroku config:set VARNAME=var
-
-After checking, I found out that adding Mailgun as an add-on already set the heroku production variables.
+I just had to google a bit to figure this out, but eventually found out that GET variables and POST variables are both read in via params. Source: http://guides.rubyonrails.org/v3.2.13/action_controller_overview.html#parameters
 
 # HW 8
 
