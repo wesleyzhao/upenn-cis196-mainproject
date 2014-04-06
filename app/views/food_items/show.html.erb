@@ -27,4 +27,30 @@
     </tr>
 
   </table>
+
+  <h4>Some healther food options</h4>
+  <table>
+    <tr>
+      <td>name</td> 
+      <td>calories</td>
+      <td>protein (g)</td>
+      <td>carbs (g)</td>
+      <td>fat (g)</td>
+      <td>description</td>
+      <td>User</td>
+    </tr>
+
+    <% @healthier_food_items.each do |food_item| %>
+    <tr>
+      <td><%= link_to "#{food_item.name}", food_item_path(food_item.id) %></td>
+      <td><%= food_item.calories %></td>
+      <td><%= food_item.protein %></td>
+      <td><%= food_item.carbs %></td>
+      <td><%= food_item.fat %></td>
+      <td><%= food_item.description %></td>
+      <td><%= link_to food_item.user.name, user_path(food_item.user.id) %></td>
+    </tr>
+    <% end %>
+
+  </table>
 </div>

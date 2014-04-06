@@ -3,7 +3,9 @@
 <table>
 
  <tr>
-   <td>name</td>
+   <td>
+     <a href="?order_by=name&order=<% if @order_str == 'ASC' %>desc<% else %>asc<% end %>">name</a>
+   </td>
    <td>email</td>
    <td>password</td>
    <td>height (cm)</td>

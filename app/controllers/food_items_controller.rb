@@ -1,6 +1,23 @@
 class FoodItemsController < ApplicationController
   def index
-    @food_items = FoodItem.all
+    order_by = params[:order_by]
+    order = params[:order]
+
+    # default order is ascending
+    if order == "desc"
+        @order_str = "DESC"
+    else
+        @order_str = "ASC"
+    end
+
+    if order_by == "name"
+      @food_items = FoodItem.all.order("name #{@order_str}")
+    elsif order_by == "calories"
+      @food_items = FoodItem.all.order("calories #{@order_str}")
+    else
+      # default order, is by name, ascending
+      @food_items = FoodItem.all.order("name ASC")
+    end
   end
 
 
@@ -13,6 +30,8 @@ class FoodItemsController < ApplicationController
   
   def show
     @food_item = FoodItem.find(params[:id])
+    calories = @food_item.calories
+    @healthier_food_items = FoodItem.where("calories < ?", calories)
   end
   
   def edit

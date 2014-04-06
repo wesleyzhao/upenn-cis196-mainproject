@@ -2,6 +2,38 @@ Link to the deployed app
 ------------------------
 http://peaceful-scrubland-1272.herokuapp.com/
 
+# HW 9
+
+Goal of the homework
+--------------------
+To learn how to make database queries for a rails app.
+
+In this homework, I specifically added the following sets of queries:
+- Controller: users_controller; method: index; query type: ordering; description: it orders the users displayed on the users index page by name, either ascending or descending depending on what the user wants (a link has been added to the view to let the user decide). Default is in ascending order.
+- Controller: food_items_controller; method: index; query type: ordering; description: it orders the fooditems displayed on the index page by name, either ascending or descending depending on what the user wants (a link has been added to the view to let the user decide). Default is in ascending order.
+- Controller: users_controller; method: show; query type: ordering, condition, limit; description: show, in order from latest to oldest, the last two food items tracked by the user currently being viewed.
+- Controller: food_items_controller; method: index; query type: ordering; description: it orders the fooditems displayed on the index page by calories, either ascending or descending depending on what the user wants (a link has been added to the view to let the user decide). Default is in ascending order.
+- Controller: food_items_controller; method: show; query type: ordering, condition; description: show, in order from least calories to most calories, food items that have been tracked that have less than the calories the food item showing has.
+
+Issues I ran in to
+------------------
+
+(1) Setting production environment variables
+
+When I saw that there would be variables such as the following
+
+ENV['MAILGUN_SMTP_LOGIN']
+
+I started trying to figure out how to make sure we could do that in Heroku without pushing code to a repo where credentials were exposed. After some googling I found out that you simply just use the heroku config command. So I could check what variables are config'd by:
+
+>> heroku config
+
+And to add it I could do
+
+>> heroku config:set VARNAME=var
+
+After checking, I found out that adding Mailgun as an add-on already set the heroku production variables.
+
 # HW 8
 
 Goal of the homework

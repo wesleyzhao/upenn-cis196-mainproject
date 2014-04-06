@@ -4,11 +4,30 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
+    order_by = params[:order_by]
+    order = params[:order]
+
+    # default order is ascending
+    if order == "desc"
+        @order_str = "DESC"
+    else
+        @order_str = "ASC"
+    end
+
+    if order_by == "name"
+        @users = User.all.order("name #{@order_str}")
+    else
+        # default order, is by name, ascending
+        @users = User.all.order("name ASC")
+    end
+
   end
 
   def show
     @user = User.find(params[:id])
+    
+    @food_items = FoodItem.where({user_id: @user.id}).order(created_at: :desc).limit(2)
+
   end
 
   def edit
