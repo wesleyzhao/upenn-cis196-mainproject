@@ -2,6 +2,26 @@ Link to the deployed app
 ------------------------
 http://peaceful-scrubland-1272.herokuapp.com/
 
+# HW `0
+
+Goal of the homework
+--------------------
+To gain some familiarity of javascript by using it in the app.
+
+In this homework, I specifically added the following functionality using JQuery:
+
+In the food_items index (/food_items) I am now allowing users to add a food item without having to go to a brand new web page. I did this by adding a button which, once clicked, shows a food_item create form and on submission of the form, it adds the food_item and shows the food_items table once again. I did this by:
+- Adding a button and a hidden form to the food_items view
+- Adding JQuery that attached, via .on, a function to show/hide the form/button after clicking the button
+- Did not have to modify the controller for this rudimentary implementation
+
+Issues I ran in to
+------------------
+
+(1) Getting the javascript to work at all.
+
+I tried adding alerts and console.logs to see if anything was working and it was not. So in the end, I followed Jason's advice from his comment about installing the jquery-turbolinks gem. After doing so, everything worked great. Took quite a bit of frustration before finally deciding to go that route though...
+
 # HW 9
 
 Goal of the homework
