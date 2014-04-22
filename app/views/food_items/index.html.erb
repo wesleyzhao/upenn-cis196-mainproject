@@ -37,3 +37,50 @@
  <% end %>
 
 </table>
+
+<p id="add-food-item-block" style="display:block;"><button id="add-food-item">+ Add Food Item</button></p>
+<div id="food-item-form" style="display:none;">
+  
+<%= form_for(@food_item) do |f| %>
+
+<div class="field">
+  <p>name</p> 
+  <%= f.text_field :name%>
+</div>
+
+<div class="field">
+  <p>calories</p> 
+  <%= f.text_field :calories%>
+</div>
+
+<div class="field">
+  <p>protein (g)</p> 
+  <%= f.text_field :protein%>
+</div>
+
+<div class="field">
+  <p>carbs (g)</p> 
+  <%= f.text_field :carbs%>
+</div>
+
+<div class="field">
+  <p>fat (g)</p> 
+  <%= f.text_field :fat%>
+</div>
+
+<div class="field">
+  <p>description</p> 
+  <%= f.text_field :description%>
+</div>
+
+<div class="field">
+  <%= f.hidden_field:user_id, :value=>current_user.id %>
+</div>
+
+<div class="actions">
+    <%= f.submit %>
+</div>
+
+<% end %>
+
+</div>

@@ -18,6 +18,8 @@ class FoodItemsController < ApplicationController
       # default order, is by name, ascending
       @food_items = FoodItem.all.order("name ASC")
     end
+
+    @food_item = FoodItem.new
   end
 
 
