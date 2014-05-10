@@ -51,8 +51,6 @@ gem 'rails_12factor', group: :production
 
 gem 'devise', '3.0'
 
-gem 'rest-client'
-gem 'multimap'
 group:development do
 		  gem 'letter_opener', github:'ryanb/letter_opener'
 end
