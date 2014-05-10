@@ -1,9 +1,35 @@
-<h1>Welcome To Food Tracker</h1>
-<p><b>Users</b></p>
-<%= link_to "View Users", "/users" %></br>
-<%= link_to "Create Users", "/users/new" %>
+<div class="page-header hero-unit">
+  <h1>Welcome To FoodTrackr (beta)</h1>
+</div>
 
+<h2>Our Wonderful Users</h2>
+<div class="row">
+  <div class="span4">
+    <p>
+      <%= link_to "View Our Users", "/users", :class => "btn btn-default" %>
+    </p>
+  </div>
+  <div class="span4">
+    <p>
+      <% if current_user %>
+      <% else %>
+      <%= link_to "Create An Account", "/users/sign_up", :class => "btn btn-default" %>
+      <% end %>
+    </p>
+  </div>
+</div>
 
-<p><b>Food Items</b></p>
-<%= link_to "View Food Items", "/food_items" %></br>
-<%= link_to "Create Food Items", "/food_items/new" %>
+<h2>The Food Items</h2>
+<div class="row">
+  <div class="span4">
+    <p>
+      <%= link_to "View Food Items", "/food_items", :class => "btn btn-default" %></br>
+    </p>
+  </div>
+  
+  <div class="span4">
+    <p>
+      <%= link_to "Create A Food Item", "/food_items/new", :class => "btn btn-default" %>
+    </p>
+  </div>
+</div>

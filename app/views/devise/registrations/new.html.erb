@@ -1,73 +1,122 @@
 <h2>Sign up</h2>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :class => 'form-horizontal', :role => 'form'}) do |f| %>
   <%= devise_error_messages! %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
+  <fieldset>
+    <div class="form-group">
+      <label class="col-sm-2 control-label" for="inputEmail"><%= f.label :email %></label>
+      <div class="col-sm-10">
+	<%= f.email_field :email, :autofocus => true, :class => "form-control" %>
+      </div>
+    </div>
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label">
+	<%= f.label :password %>
+      </label>
 
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
+      <div class="col-sm-10">
+	<%= f.password_field :password, :class => "form-control" %>
+      </div>
+    </div>
 
-  <div class="field"><%= f.label :name %><br />
-    <%= f.text_field :name%>
-  </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label">
+      <%= f.label :password_confirmation %>
+      </label>
+      
+      <div class="col-sm-10">
+      <%= f.password_field :password_confirmation, :class => "form-control" %>
+      </div>
+    </div>
 
-  <div class="field"><%= f.label :"Height (in cm)" %><br />
-    <%= f.text_field :height_cm %>
-  </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label"><%= f.label :name %></label>
+      <div class="col-sm-10">
+	<%= f.text_field :name, :class => "form-control"%>
+      </div>
+    </div>
 
-  <div class="field"><%= f.label :"Weight (in kg)" %><br /> 
-  <%= f.text_field :weight_kg %>
-  </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label"><%= f.label :"Height (in cm)" %></label>
+	<div class="col-sm-10"><%= f.text_field :height_cm, :class => "form-control" %>
+      </div>
+    </div>
 
-  <div class="field"><%= f.label :"Activity Level" %><br />
-    <%= f.text_field :activity_level%>
-  </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label"><%= f.label :"Weight (in kg)" %></label> 
+	<div class="col-sm-10"><%= f.text_field :weight_kg, :class => "form-control" %>
+      </div>
+    </div>
 
-  <div class="field"><%= f.label :"Body Fat Percentage" %><br />
-    <%= f.text_field :body_fat_percent%>
-  </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label"><%= f.label :"Activity Level" %></label>
+	<div class="col-sm-10"><%= f.text_field :activity_level, :class => "form-control" %>
+      </div>
+    </div>
 
-  <div class="field"><%= f.label :"Weight Goal (kg)" %><br />
-    <%= f.text_field :weight_kg_goal %>
-  </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label"><%= f.label :"Body Fat Percentage" %></label>
+	<div class="col-sm-10"><%= f.text_field :body_fat_percent, :class => "form-control"%>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label"><%= f.label :"Weight Goal (kg)" %></label>
+	<div class="col-sm-10"><%= f.text_field :weight_kg_goal, :class => "form-control" %>
+      </div>
+    </div>
   
-  <div class="field"><%= f.label :"Body Fat Percent Goal" %><br />
-    <%= f.text_field :body_fat_percent_goal %>
-  </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label"><%= f.label :"Body Fat Percent Goal" %></label>
+	<div class="col-sm-10"><%= f.text_field :body_fat_percent_goal, :class => "form-control" %>
+      </div>
+    </div>
   
+
 <p>Address</p>
 
-<div class="field"><%= f.label :"Street Line 1" %><br />
-  <%= f.text_field :address_street1%>
-</div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label"><%= f.label :"Street Line 1" %></label>
+      <div class="col-sm-10"><%= f.text_field :address_street1, :class => "form-control"%>
+      </div>
+    </div>
 
-<div class="field"><%= f.label :"Street Line 2" %><br/>
-  <%= f.text_field :address_street2%>
-</div>
+    <div class="form-group">
+      <%= f.label :"Street Line 2", :for => "street2Input", :class => "col-sm-2 control-label" %>
+	<div class="col-sm-10"><%= f.text_field :address_street2, :class => "form-control", :id => "street2Input" %>
+	</div>
+    </div>
 
-<div class="field"><%= f.label:"City" %><br />
-  <%= f.text_field :address_city%>
-</div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label"><%= f.label:"City" %></label>
+	<div class="col-sm-10"><%= f.text_field :address_city, :class => "form-control"%>
+      </div>
+    </div>
 
-<div class="field"><%= f.label:"State" %><br />
-  <%= f.text_field :address_state%>
-</div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label"><%= f.label:"State" %></label>
+	<div class="col-sm-10"><%= f.text_field :address_state, :class => "form-control"%>
+      </div>
+    </div>
 
-<div class="field"><%= f.label:"Zip Code" %><br /> 
-  <%= f.text_field :zipcode%>
-</div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label"><%= f.label:"Zip Code" %></label> 
+	<div class="col-sm-10"><%= f.text_field :zipcode, :class => "form-control"%>
+      </div>
+    </div>
 
-<div class="field"><%= f.label:"Country" %><br/>
-  <%= f.text_field :address_country%>
-</div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label"><%= f.label:"Country" %></label>
+	<div class="col-sm-10"><%= f.text_field :address_country, :class => "form-control"%>
+      </div>
+    </div>
 
 
-<div><%= f.submit "Sign up" %></div>
+    <%= f.submit "Sign up", :class=>"btn btn-default" %>
+
+</fieldset>
 <% end %>
 
 <%= render "devise/shared/links" %>

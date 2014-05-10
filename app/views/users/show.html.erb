@@ -1,8 +1,12 @@
+<div class="page-header">
+  <h2><%= @user.name %></h2>
+</div>
+
 <div>
 
-  <h2><%= @user.name %></h2>
-<table>
- <tr>
+<table class="table table-striped table-bordered">
+  <thead style="font-weight:bold">
+    <tr>
    <td>email</td>
    <td>password</td>
    <td>height (cm)</td>
@@ -20,8 +24,10 @@
    <td>Edit Link</td>
    <td>Destroy Link</td>
    
- </tr>
+    </tr>
+  </thead>
 
+<tbody>
  <tr>
    <td><%= @user.email %></td>
    <td><%= @user.password %></td>
@@ -37,13 +43,14 @@
    <td><%= @user.address_state %></td>
    <td><%= @user.zipcode %></td>
    <td><%= @user.address_country %></td>
-   <td><%= link_to "edit", edit_user_path(@user.id) %></td>
+   <td><%= link_to "edit", edit_user_registration_path(@user.id) %></td>
    <td><%= link_to "destroy", @user, confirm: "you sure you want to delete this user?", method: :delete %></td>
  </tr>
+ </tbody>
 </table>
 
 <h4>Latest 2 Food Items Tracked</h4>
-<table>
+<table class="table table-striped table-bordered">
  <tr>
    <td>name</td> 
    <td>calories</td>

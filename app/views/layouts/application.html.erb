@@ -7,24 +7,47 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <ul class="nav navbar-nav">
-    <li>
-      <%= link_to('Home', "/") %>
-    </li>
-    <% if current_user %>
-    <li>
-      <%= link_to('Logout', destroy_user_session_path, :method => :delete) %> 
-    </li>
-    <% else %>
-    <li>
-      <%= link_to('Login', new_user_session_path) %>
-    </li>
-    <% end %>
-  </ul>
+<nav class="navbar navbar-inverse" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand">FoodTrackr</a>
+    </div>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li>
+	  <%= link_to('Home', "/") %>
+	</li>
+	<% if current_user %>
+	<li>
+	  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %> 
+	</li>
+	<% else %>
+	<li>
+	  <%= link_to('Login', new_user_session_path) %>
+	</li>
+	<% end %>
+      </ul><!-- end navbar-nav ul-->
+    </div><!-- end navbar-collapse div -->
+  </div><!-- end container fluid -->
+</nav>
+
+<div class="container">
+  <p class="notice"><%= notice %></span>
+  <p class="alert"><%= alert %></span>
+
 <%= yield %>
 
+</div>
+
+<!--<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>-->
 </body>
 </html>

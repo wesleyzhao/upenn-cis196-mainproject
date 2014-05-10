@@ -12,43 +12,47 @@
 
 <%= form_for(@food_item) do |f| %>
 
-<div class="field">
-  <p>name</p> 
-  <%= f.text_field :name%>
+<fieldset>
+
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Name</label>
+      <div class="col-sm-10">
+	<%= f.text_field :name, :class => "form-control" %>
+      </div>
+  </div>
+
+
+<div class="form-group">
+  <label class="col-sm-2 control-label">calories</label> 
+  <div class="col-sm-10"><%= f.text_field :calories, :class => "form-control" %>
 </div>
 
-<div class="field">
-  <p>calories</p> 
-  <%= f.text_field :calories%>
+<div class="form-group">
+  <label class="col-sm-2 control-label">protein (g)</label> 
+  <div class="col-sm-10"><%= f.text_field :protein, :class => "form-control" %>
 </div>
 
-<div class="field">
-  <p>protein (g)</p> 
-  <%= f.text_field :protein%>
+<div class="form-group">
+  <label class="col-sm-2 control-label">carbs (g)</label> 
+  <div class="col-sm-10"><%= f.text_field :carbs, :class => "form-control" %>
 </div>
 
-<div class="field">
-  <p>carbs (g)</p> 
-  <%= f.text_field :carbs%>
+<div class="form-group">
+  <label class="col-sm-2 control-label">fat (g)</label> 
+  <div class="col-sm-10"><%= f.text_field :fat, :class => "form-control" %>
 </div>
 
-<div class="field">
-  <p>fat (g)</p> 
-  <%= f.text_field :fat%>
+<div class="form-group">
+  <label class="col-sm-2 control-label">description</label> 
+  <div class="col-sm-10"><%= f.text_field :description, :class => "form-control" %>
 </div>
 
-<div class="field">
-  <p>description</p> 
-  <%= f.text_field :description%>
-</div>
-
-
-<div class="field">
+<div class="form-group">
   <%= f.hidden_field:user_id, :value=>current_user.id %>
 </div>
 
 <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Save changes", :class=>"btn btn-default" %>
 </div>
 
 <% end %>

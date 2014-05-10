@@ -1,9 +1,11 @@
-<h1>FoodItems#show</h1>
-<p>Find me in app/views/food_items/show.html.erb</p>
+<div class="page-header">
+     <h2><%= @food_item.name %></h2>
+     <h4>Food Item</h4>
+</div>
 
 <div>
-  <h2><%= @food_item.name %></h2>
-  <table>
+  <table class="table table-striped table-bordered">
+    <thead style="font-weight:bold">
     <tr>
       <td>calories</td>
       <td>protein (g)</td>
@@ -14,7 +16,9 @@
       <td>edit</td>
       <td>destroy</td>
     </tr>
+    </thead>
 
+    <tbody>
     <tr>
       <td><%= @food_item.calories %></td>
       <td><%= @food_item.protein %></td>
@@ -25,11 +29,13 @@
       <td><%= link_to "edit", edit_food_item_path(@food_item.id) %></td>
       <td><%= link_to "destroy", @food_item, confirm: "you sure you want to delete this food item?", method: :delete %></td>
     </tr>
+    </tbody>
 
   </table>
 
   <h4>Some healther food options</h4>
-  <table>
+  <table class="table table-striped table-bordered">
+    <thead style="font-weight:bold">
     <tr>
       <td>name</td> 
       <td>calories</td>
@@ -39,7 +45,9 @@
       <td>description</td>
       <td>User</td>
     </tr>
+    </thead>
 
+    <tbody>
     <% @healthier_food_items.each do |food_item| %>
     <tr>
       <td><%= link_to "#{food_item.name}", food_item_path(food_item.id) %></td>
@@ -51,6 +59,6 @@
       <td><%= link_to food_item.user.name, user_path(food_item.user.id) %></td>
     </tr>
     <% end %>
-
+    </tbody>
   </table>
 </div>
