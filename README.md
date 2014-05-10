@@ -2,7 +2,41 @@ Link to the deployed app
 ------------------------
 http://peaceful-scrubland-1272.herokuapp.com/
 
-# HW `0
+# FINAL README SUBMISSION
+
+App description
+--------------------
+FoodTrackr is a rudimentary app that allows you to create an account and track food items you consume. The account lets you save information such as your current weight, body fat percentage, etc as well as your goals. Also food items can be saved and sorted by their caloric content and macronutrient breakdown.
+
+More detailed functionality
+---------------------------
+(Style) This app used Twitter's Bootstrap libray to help beautify the pages.
+
+(Gem) This app used the Devise gem (https://github.com/plataformatec/devise) and bootstrap-sass (https://github.com/twbs/bootstrap-sass). The Devise gem helped provide quick functionality for user registratoin and editing. The bootstrap-sass gem helped install the twitter-bootstrap gem without having to use the Less-css.
+
+(Addon) This app used the Mailgun Heroku Addon for sending and receiving email from the application. Here is Heroku's documentation: https://devcenter.heroku.com/articles/mailgun And the addon: https://addons.heroku.com/mailgun
+
+(Validations)
+- "present" for a food item name
+- custom regex for any valid integer for food item nutritional values
+- custom regex for any valid postive number for user registration weight, body fat, height values
+
+(Scope/Queries)
+-Controller: users_controller; method: index; query type: ordering; description: it orders the users displayed on the users index page by name, either ascending or descending depending on what the user wants (a link has been added to the view to let the user decide). Default is in ascending order. 
+- Controller: food_items_controller; method: index; query type: ordering; description: it orders the fooditems displayed on the index page by name, either ascending or descending depending on what the user wants (a link has been added to the view to let the user decide). Default is in ascending order.
+- Controller: users_controller; method: show; query type: ordering, condition, limit; description: show, in order from latest to oldest, the last two food items tracked by the user currently being viewed.
+- Controller: food_items_controller; method: index; query type: ordering; description: it orders the fooditems displayed on the index page by calories, either ascending or descending depending on what the user wants (a link has been added to the view to let the user decide). Default is in ascending order.
+- Controller: food_items_controller; method: show; query type: ordering, condition; description: show, in order from least calories to most calories, food items that have been tracked that have less than the calories the food item showing has.
+
+(Javascript)
+In the food_items index (/food_items) users can add a food item without having to go to a brand new web page. I did this by adding a button which, once clicked, shows a food_item create form and on submission of the form, it adds the food_item and shows the food_items table once again. This is done by:
+- Adding a button and a hidden form to the food_items view
+- Adding JQuery that attached, via .on, a function to show/hide the form/button after clicking the button
+
+
+
+
+# HW 10
 
 Goal of the homework
 --------------------
