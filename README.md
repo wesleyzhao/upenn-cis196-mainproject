@@ -33,7 +33,9 @@ In the food_items index (/food_items) users can add a food item without having t
 - Adding a button and a hidden form to the food_items view
 - Adding JQuery that attached, via .on, a function to show/hide the form/button after clicking the button
 
-
+Main problem
+------------
+In the end the main problem was trying to get Twitter's bootstrap library installed. At first, I tried installing the Gem. However, to use the most common twitter-bootstrap gem using Less is required. So instead I opted to mix together the use of the less popular 'bootstrap-sass' gem which installs the Bootstrap library to be able to use with Rails right away and also using the minified public version of the Bootstrap CSS file.
 
 
 # HW 10
